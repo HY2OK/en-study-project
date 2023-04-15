@@ -1,0 +1,35 @@
+{
+    "name": "en-study-project",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "type": "module",
+    "scripts": {
+        "start": "nodemon server/index.js",
+        "backend": "nodemon server/index.js",
+        "dev": "concurrently \"npm run backend\" \"npm run start --prefix client\""
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/HY2OK/en-study-project.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/HY2OK/en-study-project/issues"
+    },
+    "homepage": "https://github.com/HY2OK/en-study-project#readme",
+    "dependencies": {
+        "bcrypt": "^5.1.0",
+        "cookie-parser": "^1.4.6",
+        "cors": "^2.8.5",
+        "express": "^4.18.2",
+        "jsonwebtoken": "^9.0.0",
+        "mongoose": "^6.10.0"
+    },
+    "devDependencies": {
+        "concurrently": "^8.0.1",
+        "nodemon": "^2.0.22"
+    }
+}
