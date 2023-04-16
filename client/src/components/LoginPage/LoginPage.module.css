@@ -1,0 +1,161 @@
+.container {
+    width: 390px;
+    height: 844px;
+
+    background: linear-gradient(
+        115.34deg,
+        rgba(90, 157, 236, 0.86) 4.73%,
+        rgba(100, 159, 235, 0.78) 22.35%,
+        rgba(110, 90, 236, 0.46) 69.21%,
+        rgba(237, 193, 222, 0.72) 99.96%,
+        rgba(90, 157, 236, 0) 100%
+    );
+
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 도형 */
+
+.container .box {
+    position: fixed;
+    width: 200px;
+    height: 200px;
+    border: 3px solid #9287d8;
+    border-radius: 30px;
+    top: -40px;
+    left: -70px;
+}
+
+.container .circle {
+    position: fixed;
+    width: 200px;
+    height: 200px;
+    border: 3px solid #9e9cf4;
+    border-radius: 50%;
+    top: 60px;
+    left: -90px;
+}
+
+.container .circle2 {
+    position: fixed;
+    width: 250px;
+    height: 250px;
+    border: 3px solid #c6e8fb;
+    border-radius: 50%;
+    top: 680px;
+    left: 242px;
+}
+
+.container .box2 {
+    position: fixed;
+    width: 135px;
+    height: 135px;
+    border: 3px solid #efcee8;
+    border-radius: 30px;
+    top: 740px;
+    left: 160px;
+}
+
+.container .tri2 {
+    position: fixed;
+    width: 100px;
+    height: 100px;
+    border: 3px solid #6a93cf;
+    border-radius: 20px;
+    transform: rotate(45deg);
+    top: 630px;
+    left: 320px;
+}
+
+/* 도형 */
+
+.logo img {
+    position: fixed;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 130px;
+}
+
+.container .login {
+    width: 330px;
+    height: 700px;
+    margin-top: 70px;
+    border-radius: 30px;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.container .login .title {
+    font-size: 30px;
+    font-weight: 600;
+    text-align: center;
+    margin: 100px 0px 30px 0px;
+}
+
+.container .login .form > div {
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
+    color: #4e4e4e;
+}
+
+.container .login .form > div input {
+    width: 245px;
+    border: none;
+    border-bottom: 1px solid #a3caf9;
+    margin-bottom: 17px;
+    transition: all 0.5s ease-in;
+}
+
+.container .login .form > div input:focus {
+    outline: none;
+    border-bottom: 3px solid #5ba1f4;
+}
+
+.container .login .form button {
+    position: relative;
+    border: none;
+    display: block;
+    width: 70px;
+    height: 70px;
+    border-radius: 100%;
+    background-color: #a3caf9;
+    margin: 23px auto;
+    cursor: pointer;
+}
+
+.container .login .form button > div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+    font-size: 25px;
+    border-radius: 100%;
+    background-color: #5ba1f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ques {
+    font-size: 15px;
+    color: #424242;
+}
+
+.ques span {
+    color: #f64f4f;
+    cursor: pointer;
+}

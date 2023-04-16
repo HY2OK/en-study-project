@@ -4,6 +4,7 @@ import {useSelector} from 'react-redux';
 import {useNavigate} from 'react-router-dom';
 import axios from 'axios';
 import cookie from 'react-cookies';
+import {motion} from 'framer-motion';
 
 function MainPage() {
     const {users, loading, error} = useSelector(state => state.user);
@@ -22,7 +23,7 @@ function MainPage() {
     };
 
     return (
-        <div>
+        <motion.div initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}}>
             {users.email ? (
                 <button type="button" className="btn btn-primary" onClick={logoutClick}>
                     logout
@@ -31,7 +32,7 @@ function MainPage() {
                 <></>
             )}
             <h2>manin</h2>
-        </div>
+        </motion.div>
     );
 }
 

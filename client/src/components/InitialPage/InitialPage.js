@@ -1,10 +1,10 @@
 import React from 'react';
 import Auth from '../../hoc/auth';
-import s from './InitialPage.module.css';
+import style from './InitialPage.module.css';
 import logoImg from '../../assets/img/logo.png';
 import {useNavigate} from 'react-router-dom';
+import {motion} from 'framer-motion';
 
-// className={`${s.}`}
 function InitialPage() {
     const navigate = useNavigate();
 
@@ -12,32 +12,32 @@ function InitialPage() {
         navigate('/');
     };
     return (
-        <div className={`${s.container}`}>
-            <div className={`${s.circle}`}></div>
-            <div className={`${s.box}`}></div>
-            <div className={`${s.tri}`}></div>
+        <motion.div className={`${style.container}`} initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}}>
+            <div className={`${style.circle}`}></div>
+            <div className={`${style.box}`}></div>
+            <div className={`${style.tri}`}></div>
 
-            <div className={`${s.content}`}>
-                <div className={`${s.logo}`}>
+            <div className={`${style.content}`}>
+                <div className={`${style.logo}`}>
                     <img src={logoImg} alt="" onClick={imgClick} />
                     <span>Good at enGlish with Gpt</span>
                 </div>
-                <div className={`${s.h1}`}>Hello Welcome to our site</div>
-                <div className={`${s.h1}`}>Then shall we start English</div>
+                <div className={`${style.h1}`}>Hello Welcome to our site</div>
+                <div className={`${style.h1}`}>Then shall we start English</div>
 
-                <div className={`${s.btns}`}>
-                    <button className={`${s.btn}`} onClick={() => navigate('/login')}>
-                        <div className={`${s.b1}`}></div>Login
+                <div className={`${style.btns}`}>
+                    <button className={`${style.btn}`} onClick={() => navigate('/login')}>
+                        <div className={`${style.b1}`}></div>Login
                     </button>
-                    <button className={`${s.btn}`} onClick={() => navigate('/register')}>
-                        <div className={`${s.b2}`}></div>Register
+                    <button className={`${style.btn}`} onClick={() => navigate('/register')}>
+                        <div className={`${style.b2}`}></div>Register
                     </button>
                 </div>
             </div>
 
-            <div className={`${s.circle2}`}></div>
-            <div className={`${s.box2}`}></div>
-        </div>
+            <div className={`${style.circle2}`}></div>
+            <div className={`${style.box2}`}></div>
+        </motion.div>
     );
 }
 
