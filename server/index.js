@@ -16,6 +16,8 @@ app.use(cookieParser());
 
 app.use('/api/users', userRouter);
 
+mongoose.set('strictQuery', false);
+
 mongoose
     .connect(URL)
     .then(() => app.listen(PORT, () => console.log(`mongoDB connect port:${PORT}`)))

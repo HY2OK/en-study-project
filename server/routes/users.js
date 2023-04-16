@@ -39,16 +39,15 @@ router.post('/login', (req, res) => {
     });
 });
 
-router.get('/auth', auth, (req, res) => {
+router.get('/auth', auth, async (req, res) => {
     // auth 미들웨어 통과 -> auth가 true
-    res.status(200).json({
+    await res.status(200).json({
         _id: req.user._id,
         isAdmin: req.user.role === 0 ? false : true,
         isAuth: true,
         email: req.user.email,
         name: req.user.name,
         role: req.user.role,
-        image: req.user.image,
     });
 });
 
