@@ -18,7 +18,7 @@ function MainPage() {
     const logoutClick = () => {
         axios.get('/api/users/logout').then(res => {
             if (res.data.success) {
-                cookie.remove('x_auth');
+                cookie.remove('login_token');
                 navigate('/');
             } else {
                 alert('로그아웃에 실패하였습니다.');
