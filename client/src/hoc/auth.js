@@ -13,10 +13,10 @@ function auth(SpecificComponent, option, adminRoute = null) {
         const navigate = useNavigate();
         const dispatch = useDispatch();
         useEffect(() => {
-            dispatch(authUser()).then(res => {
+            dispatch(authUser()).then(async res => {
                 if (!res.payload.isAuth) {
                     if (option) {
-                        navigate('/login');
+                        await navigate('/login');
                     }
                 } else {
                     if (adminRoute && !res.payload.isAdmin) {

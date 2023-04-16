@@ -2,6 +2,7 @@ import React from 'react';
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import {AnimatePresence} from 'framer-motion';
 
+import './App.css';
 import './reset.module.css';
 
 import InitialPage from './components/InitialPage/InitialPage';

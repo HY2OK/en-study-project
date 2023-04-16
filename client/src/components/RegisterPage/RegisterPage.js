@@ -64,19 +64,19 @@ function RegisterPage() {
                 <form className={`${style.form}`} onSubmit={onSubmitHandler}>
                     <div className={`${style.email}`}>
                         <label>User Name</label>
-                        <input type="text" name="name" value={name} onChange={onChange} />
+                        <input type="text" name="name" value={name} onChange={onChange} required />
                     </div>
                     <div className={`${style.email}`}>
                         <label>E-mail</label>
-                        <input type="email" name="email" value={email} onChange={onChange} />
+                        <input type="email" name="email" value={email} onChange={onChange} required />
                     </div>
                     <div className={`${style.password}`}>
                         <label>Password</label>
-                        <input type="password" name="password" value={password} onChange={onChange} />
+                        <input type="password" name="password" value={password} onChange={onChange} required />
                     </div>
                     <div className={`${style.password}`}>
                         <label>Confirm Password</label>
-                        <input type="password" name="confirmPassword" value={confirmPassword} onChange={onChange} />
+                        <input type="password" name="confirmPassword" value={confirmPassword} onChange={onChange} required />
                     </div>
                     <button type="submit">
                         <div>
@@ -97,3 +97,4 @@ function RegisterPage() {
 }
 
 export default Auth(RegisterPage, false);
+// export default RegisterPage;

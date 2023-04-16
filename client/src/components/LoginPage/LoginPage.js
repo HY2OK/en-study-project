@@ -33,7 +33,6 @@ function LoginPage(props) {
         };
 
         dispatch(loginUser(body)).then(res => {
-            console.log(res);
             if (res.payload.loginSuccess) {
                 navigate('/main');
             } else {
@@ -56,11 +55,11 @@ function LoginPage(props) {
                 <form className={`${style.form}`} onSubmit={onSubmitHandler}>
                     <div className={`${style.email}`}>
                         <label>E-mail</label>
-                        <input type="email" name="email" value={email} onChange={onChange} />
+                        <input type="email" name="email" value={email} onChange={onChange} required />
                     </div>
                     <div className={`${style.password}`}>
                         <label>Password</label>
-                        <input type="password" name="password" value={password} onChange={onChange} />
+                        <input type="password" name="password" value={password} onChange={onChange} required />
                     </div>
                     <button type="submit">
                         <div>
