@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import Auth from '../../hoc/auth';
 import {useSelector} from 'react-redux';
 import {useNavigate} from 'react-router-dom';
@@ -10,7 +10,7 @@ import letterImg from '../../assets/img/letterLogo.png';
 import style from './MainPage.module.css';
 
 function MainPage() {
-    const {users, loading, error} = useSelector(state => state.user);
+    const {users} = useSelector(state => state.user);
 
     console.log(users);
     const navigate = useNavigate();

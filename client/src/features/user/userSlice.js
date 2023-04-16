@@ -44,7 +44,7 @@ export const userSlice = createSlice({
         },
         [loginUser.rejected]: (state, action) => {
             state.loading = false;
-            state.error = action.payload;
+            state.error = 'error';
         },
         // register
         [registerUser.pending]: state => {
@@ -57,10 +57,10 @@ export const userSlice = createSlice({
         },
         [registerUser.rejected]: (state, action) => {
             state.loading = false;
-            state.error = action.payload;
+            state.error = 'error';
         },
         // auth
-        [authUser.pending]: state => {
+        [authUser.pending]: (state, action) => {
             state.loading = true;
             state.users = '';
             state.error = '';
@@ -72,7 +72,7 @@ export const userSlice = createSlice({
         },
         [authUser.rejected]: (state, action) => {
             state.loading = false;
-            state.error = action.payload;
+            state.error = 'error';
             state.users = '';
         },
     },
