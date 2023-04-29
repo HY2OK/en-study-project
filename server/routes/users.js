@@ -39,9 +39,9 @@ router.post('/login', (req, res) => {
     });
 });
 
-router.get('/auth', auth, async (req, res) => {
+router.get('/auth', auth, (req, res) => {
     // auth 미들웨어 통과 -> auth가 true
-    await res.status(200).json({
+    res.status(200).json({
         _id: req.user._id,
         isAdmin: req.user.role === 0 ? false : true,
         isAuth: true,
