@@ -42,7 +42,7 @@ function MainPage() {
                     <li onClick={() => navigate('/main')}>
                         <div></div>Today's Word
                     </li>
-                    <li onClick={() => navigate('/main')}>
+                    <li onClick={() => navigate('/roleprev')}>
                         <div></div>Today's Role Playing
                     </li>
                     <li onClick={() => navigate('/main')}>

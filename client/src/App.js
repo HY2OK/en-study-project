@@ -9,6 +9,8 @@ import InitialPage from './components/InitialPage/InitialPage';
 import RegisterPage from './components/RegisterPage/RegisterPage';
 import LoginPage from './components/LoginPage/LoginPage';
 import MainPage from './components/MainPage/MainPage';
+import RolePage from './components/RolePage/RolePage';
+import RolePrevPage from './components/RolePage/RolePrevPage/RolePrevPage';
 
 function App() {
     return (
@@ -19,6 +21,8 @@ function App() {
                     <Route path="/register" element={<RegisterPage />} />
                     <Route path="/login" element={<LoginPage />} />
                     <Route path="/main" element={<MainPage />} />
+                    <Route path="/roleprev" element={<RolePrevPage />} />
+                    <Route path="/role" element={<RolePage />} />
                 </Routes>
             </AnimatePresence>
         </BrowserRouter>
