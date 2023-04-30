@@ -2,10 +2,12 @@ import React, {useState} from 'react';
 import {useNavigate} from 'react-router-dom';
 import styles from './RolePrevPage.module.css';
 import {motion} from 'framer-motion';
+import {AiOutlineClose} from 'react-icons/ai';
 
 function RolePrevPage() {
     const navigate = useNavigate();
 
+    // const [gender, setGender] = useState('male');
     const [info, setInfo] = useState({
         name: '',
         gender: '',
@@ -32,6 +34,13 @@ function RolePrevPage() {
         });
     };
 
+    const onOptionChange = e => {
+        setInfo(state => ({
+            ...state,
+            gender: `${e.target.value}`,
+        }));
+    };
+
     return (
         <motion.div className={`${styles.container}`} initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}}>
             <div className={styles.formBox}>
@@ -42,13 +51,34 @@ function RolePrevPage() {
                     you can role-play <br /> according to the situation
                 </div>
                 <form onSubmit={submitHandler}>
+                    {/* <input name="gender" type="text" onChange={inputHandler} required /> */}
+                    <div className={`${styles.radioBox}`}>
+                        <label className={`${styles.genderLabel}`}>
+                            male
+                            <input
+                                className={`${styles.genderInput}`}
+                                type="radio"
+                                name="gender"
+                                value="male"
+                                onChange={onOptionChange}
+                                required
+                            />
+                        </label>
+                        <label className={`${styles.genderLabel}`}>
+                            female
+                            <input
+                                className={`${styles.genderInput}`}
+                                type="radio"
+                                name="gender"
+                                value="female"
+                                onChange={onOptionChange}
+                                required
+                            />
+                        </label>
+                    </div>
                     <label>
                         name:
                         <input name="name" type="text" onChange={inputHandler} required />
-                    </label>
-                    <label>
-                        gender:
-                        <input name="gender" type="text" onChange={inputHandler} required />
                     </label>
                     <label>
                         location:
@@ -65,8 +95,7 @@ function RolePrevPage() {
                     </button>
                 </form>
                 <button className={styles.prevBtn} onClick={() => navigate('/main')}>
-                    <div></div>
-                    Prev
+                    <AiOutlineClose />
                 </button>
             </div>
         </motion.div>

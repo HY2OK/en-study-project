@@ -54,59 +54,86 @@
     display: flex;
     flex-direction: column;
     width: 245px;
-    font-size: 18px;
+    font-size: 20px;
     margin-bottom: 34px;
 }
 
 .container .formBox > form > label > input {
     border: none;
+    font-size: 18px;
     border-bottom: 3px solid #a3caf9;
+    margin-top: 5px;
 }
 
 .container .formBox > form > label > input:focus {
     outline: none;
 }
 
+.container .formBox > form .radioBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.container .formBox > form .radioBox .genderLabel {
+    border: 1px solid #d0d0d0;
+    opacity: 0.8;
+    width: 110px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+}
+
+.container .formBox > form .radioBox .genderLabel:first-of-type {
+    border-radius: 10px 0 0 10px;
+}
+
+.container .formBox > form .radioBox .genderLabel:last-of-type {
+    border-radius: 0 10px 10px 0;
+}
+
+.container .formBox > form .radioBox .genderLabel .genderInput {
+    visibility: hidden;
+}
+
+.container .formBox > form .radioBox .genderLabel:has(.genderInput:checked) {
+    border: 2px solid #5665ed;
+    color: #5665ed;
+    font-weight: bold;
+    opacity: 1;
+}
+
 .container .formBox > form .nextBtn {
-    position: fixed;
-    top: 78%;
-    left: 52%;
+    margin-top: 10px;
     border: none;
     background: #bad1ff;
     border-radius: 10px;
-    width: 103px;
+    width: 200px;
     height: 38px;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 400;
 }
 
 .container .formBox > form .nextBtn > div {
-    width: 103px;
-    height: 38px;
     position: absolute;
-    transform: translate(-5%, -25%) rotate(3deg);
+    width: 200px;
+    height: 38px;
+    transform: translate(-3%, -25%) rotate(2deg);
     border-radius: 10px;
     border: 1px solid #5665ed;
 }
 
 .container .formBox .prevBtn {
     position: fixed;
-    top: 78%;
-    left: 22%;
+    top: 75px;
+    left: 65px;
     border: none;
-    background: #bad1ff;
-    border-radius: 10px;
-    width: 103px;
-    height: 38px;
-    font-size: 20px;
-    font-weight: 400;
-}
-
-.container .formBox .prevBtn > div {
-    width: 103px;
-    height: 38px;
-    position: absolute;
-    transform: translate(-5%, -25%) rotate(-2deg);
-    border-radius: 10px;
-    border: 1px solid #5665ed;
+    background: none;
+    width: 30px;
+    height: 30px;
+    font-size: 25px;
+    color: #5665ed;
 }

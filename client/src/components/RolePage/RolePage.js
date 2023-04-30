@@ -30,7 +30,7 @@ function RolePage() {
         console.log(name, gender, location, situation);
         const start = {
             role: 'user',
-            content: `나의 질문에 english로 채팅하자 너는 꼭 한문장으로 답변해줘. 너 역할은 이름이 ${name}이고, 성별은 ${gender}, 장소는 ${location}이고, 상황은 ${situation}이야 hello`,
+            content: `나의 질문에 english로 채팅하자 너는 꼭 한문장으로 답변해줘. 너 역할은 이름이 ${name}이고, 성별은 ${gender}, 장소는 ${location}, 상황은 ${situation}이야 hello`,
         };
 
         const data = [...chat];
