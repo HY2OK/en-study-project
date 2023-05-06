@@ -1,6 +1,5 @@
 import express from 'express';
 import {Configuration, OpenAIApi} from 'openai';
-import Role from '../models/Role.js';
 import {API_KEY} from '../config/openai.js';
 
 const router = express.Router();
