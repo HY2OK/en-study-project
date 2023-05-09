@@ -12,7 +12,6 @@ import style from './MainPage.module.css';
 function MainPage() {
     const {users} = useSelector(state => state.user);
 
-    console.log(users);
     const navigate = useNavigate();
 
     const logoutClick = () => {
@@ -39,7 +38,7 @@ function MainPage() {
             </button>
             <div className={`${style.content}`}>
                 <ul>
-                    <li onClick={() => navigate('/main')}>
+                    <li onClick={() => navigate('/word')}>
                         <div></div>Today's Word
                     </li>
                     <li onClick={() => navigate('/roleprev')}>

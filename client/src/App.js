@@ -11,6 +11,8 @@ import LoginPage from './components/LoginPage/LoginPage';
 import MainPage from './components/MainPage/MainPage';
 import RolePage from './components/RolePage/RolePage';
 import RolePrevPage from './components/RolePage/RolePrevPage/RolePrevPage';
+import WordPage from './components/WordPage/WordPage';
+import UnknownPage from './components/WordPage/UnknownPage/UnknownPage';
 
 function App() {
     return (
@@ -23,6 +25,8 @@ function App() {
                     <Route path="/main" element={<MainPage />} />
                     <Route path="/roleprev" element={<RolePrevPage />} />
                     <Route path="/role" element={<RolePage />} />
+                    <Route path="/word" element={<WordPage />} />
+                    <Route path="/word/:userId" element={<UnknownPage />} />
                 </Routes>
             </AnimatePresence>
         </BrowserRouter>

@@ -1,0 +1,87 @@
+.back {
+    width: 390px;
+    height: 844px;
+    z-index: 10;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background: #fff;
+    opacity: 0.5;
+}
+
+.container {
+    font-family: 'Abhaya Libre', serif;
+    width: 331px;
+    height: 350px;
+    z-index: 999;
+    position: absolute;
+    top: 202px;
+    left: 29px;
+    background: #fff;
+    opacity: 1;
+    border: 2px solid #9e9cf4;
+    border-radius: 20px;
+    padding: 35px;
+}
+
+.container div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container div .h1 {
+    font-size: 30px;
+    font-weight: 400;
+    text-align: center;
+    line-height: 35px;
+    margin-bottom: 5px;
+}
+
+.container div .h2 {
+    font-size: 15px;
+    font-weight: 800;
+    line-height: 17px;
+    text-align: center;
+    margin-bottom: 34px;
+}
+
+.container div form div textarea {
+    width: 297px;
+    height: 60px;
+    margin-bottom: 15px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border-radius: 9px;
+    border: none;
+    background-color: #dfe9fc;
+    font-size: 20px;
+    resize: none;
+    line-height: 35px;
+}
+
+.container div form div textarea:focus {
+    outline: 2px solid #9e9cf4;
+}
+
+.container div form div button {
+    position: absolute;
+    top: 270px;
+    left: 260px;
+    border: none;
+    background: none;
+    color: #9e9cf4;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.close {
+    position: absolute;
+    left: 6px;
+    top: 10px;
+    border: none;
+    background: none;
+    font-size: 25px;
+    color: #9e9cf4;
+}

@@ -1,0 +1,251 @@
+.back {
+    font-family: 'Abhaya Libre', serif;
+    width: 390px;
+    height: 844px;
+
+    background: linear-gradient(
+        115.34deg,
+        rgba(90, 157, 236, 0.86) 4.73%,
+        rgba(100, 159, 235, 0.78) 22.35%,
+        rgba(110, 90, 236, 0.46) 69.21%,
+        rgba(237, 193, 222, 0.72) 99.96%,
+        rgba(90, 157, 236, 0) 100%
+    );
+
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.back .container {
+    position: relative;
+    width: 331px;
+    height: 759px;
+    background: #fff;
+    border-radius: 20px;
+}
+
+.back .container .header {
+    width: 331px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.container .header {
+    width: 250px;
+    height: 65px;
+    font-family: 'Abhaya Libre';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    padding-top: 20px;
+    line-height: 45px;
+    text-align: center;
+}
+
+.container .header .x {
+    background: none;
+    border: none;
+    color: #bad1ff;
+    font-size: 25px;
+}
+
+.container .header .modal button {
+    background: none;
+    border: none;
+    font-size: 25px;
+    color: #bad1ff;
+}
+
+.container .content {
+    width: 299px;
+    height: 694px;
+    border-top: 1px solid #bad1ff;
+    margin: 0px 16px;
+}
+
+.container .content .textBox {
+    margin-top: 11px;
+    width: 299px;
+    height: 74px;
+    background: #dfe9fc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-weight: 400;
+    text-align: center;
+    border-radius: 9px;
+}
+
+.container .content .mainBox {
+    width: 100%;
+    height: 444px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container .content .mainBox button {
+    border: none;
+    background: none;
+    outline: none;
+    font-size: 40px;
+    color: #5a9dec;
+}
+
+.container .content .mainBox .word {
+    position: relative;
+    font-size: 35px;
+}
+
+.container .content .mainBox .word .mean {
+    position: absolute;
+    font-size: 20px;
+    text-align: center;
+    width: 200%;
+    top: 200%;
+    left: 50%;
+    opacity: 1;
+    transform: translate(-50%, -50%);
+    /* transition: opacity 0.1s ease; */
+}
+
+.container .content .mainBox .word .mean.hidden {
+    opacity: 0;
+}
+
+.container .content .mainBox button:disabled {
+    color: #bad1ff;
+}
+
+.container .content .chekcBtns {
+    width: 100%;
+    height: 95px;
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.container .content .chekcBtns button {
+    position: relative;
+    width: 103px;
+    height: 38px;
+    border: none;
+    background: #bad1ff;
+    border-radius: 10px;
+}
+
+.container .content .chekcBtns button:first-child div {
+    position: absolute;
+    width: 103px;
+    height: 38px;
+    top: 0%;
+    left: 0%;
+    border: 1px solid #5665ed;
+    border-radius: 10px;
+    transform: rotate(-4deg);
+}
+
+.container .content .chekcBtns button:last-child div {
+    position: absolute;
+    width: 103px;
+    height: 38px;
+    top: 0%;
+    left: 0%;
+    border: 1px solid #5665ed;
+    border-radius: 10px;
+    transform: rotate(3deg);
+}
+
+.container .content .footer {
+    position: relative;
+    width: 100%;
+    height: 64px;
+    border-top: 1px solid #bad1ff;
+}
+
+.container .content .footer svg {
+    position: absolute;
+    top: 14px;
+    right: 10px;
+    font-size: 40px;
+    color: #bad1ff;
+}
+
+.saving {
+    position: absolute;
+    top: 73%;
+    left: 50%;
+    width: 70%;
+    height: 35px;
+    padding: 0 10px;
+    background-color: #dbead5;
+    border: 1px solid #008800;
+    border-radius: 10px;
+    transform: translate(-50%, -50%);
+    color: #009900;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+/* loading spinner */
+.ellipsis {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+.ellipsis div {
+    position: absolute;
+    top: 33px;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: #bad1ff;
+    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+.ellipsis div:nth-child(1) {
+    left: 8px;
+    animation: lds-ellipsis1 0.6s infinite;
+}
+.ellipsis div:nth-child(2) {
+    left: 8px;
+    animation: lds-ellipsis2 0.6s infinite;
+}
+.ellipsis div:nth-child(3) {
+    left: 32px;
+    animation: lds-ellipsis2 0.6s infinite;
+}
+.ellipsis div:nth-child(4) {
+    left: 56px;
+    animation: lds-ellipsis3 0.6s infinite;
+}
+@keyframes lds-ellipsis1 {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+@keyframes lds-ellipsis3 {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0);
+    }
+}
+@keyframes lds-ellipsis2 {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(24px, 0);
+    }
+}

@@ -1,0 +1,119 @@
+.background {
+    font-family: 'Abhaya Libre', serif;
+    width: 390px;
+    height: 844px;
+
+    background: linear-gradient(
+        115.34deg,
+        rgba(90, 157, 236, 0.86) 4.73%,
+        rgba(100, 159, 235, 0.78) 22.35%,
+        rgba(110, 90, 236, 0.46) 69.21%,
+        rgba(237, 193, 222, 0.72) 99.96%,
+        rgba(90, 157, 236, 0) 100%
+    );
+
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 331px;
+    height: 760px;
+    background: #fff;
+    border-radius: 20px;
+    padding: 16px;
+}
+
+.container .header {
+    position: relative;
+    width: 100%;
+    height: 65px;
+    border-bottom: 1px solid #bad1ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .header .list {
+    width: 299px;
+    font-size: 28px;
+    line-height: 30px;
+    text-align: center;
+    font-weight: 400;
+}
+
+.container .header .backBtn {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translate(0, -50%);
+    font-size: 25px;
+    color: #bad1ff;
+}
+
+.container .main {
+    width: 299px;
+    height: 630px;
+    overflow-y: scroll;
+}
+
+.container .main .word {
+    width: 100%;
+    margin: 11px 0px;
+    padding: 10px 20px;
+    height: 57px;
+    background: #dfe9fc;
+    border-radius: 9px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 25px;
+    font-weight: 400;
+}
+
+.container .main .word span {
+    font-size: 15px;
+}
+
+/* loading spinner */
+
+.ring {
+    display: inline-block;
+    position: fixed;
+    width: 80px;
+    height: 80px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    margin: 8px;
+    border: 5px solid #cef;
+    border-radius: 50%;
+    animation: ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: #cef transparent transparent transparent;
+}
+.ring div:nth-child(1) {
+    animation-delay: -0.45s;
+}
+.ring div:nth-child(2) {
+    animation-delay: -0.3s;
+}
+.ring div:nth-child(3) {
+    animation-delay: -0.15s;
+}
+@keyframes ring {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
