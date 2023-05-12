@@ -4,9 +4,17 @@ import WordModal from './WordModal/WordModal';
 import {useDispatch, useSelector} from 'react-redux';
 import {getFiveWords, uploadWord} from '../../features/word/wordSlice';
 import {authUser} from '../../features/user/userSlice';
-import {AiOutlineClose, AiOutlineDoubleLeft, AiOutlineDoubleRight, AiOutlineCheck} from 'react-icons/ai';
+import {
+    AiOutlineClose,
+    AiOutlineDoubleLeft,
+    AiOutlineDoubleRight,
+    AiOutlineCheck,
+    AiOutlineEye,
+    AiOutlineEyeInvisible,
+} from 'react-icons/ai';
 import {HiMagnifyingGlass} from 'react-icons/hi2';
 import {RiFileWord2Fill} from 'react-icons/ri';
+import {HiOutlineSpeakerWave} from 'react-icons/hi2';
 
 import styles from './WordPage.module.css';
 import {useNavigate} from 'react-router-dom';
@@ -80,6 +88,38 @@ function WordPage() {
 
     const onClickUnknown = () => {
         navigate(`/word/${users._id}`);
+    };
+
+    const onClickSpeak = text => {
+        let voices = [];
+
+        const setVoiceList = () => {
+            voices = window.speechSynthesis.getVoices();
+        };
+
+        setVoiceList();
+
+        if (window.speechSynthesis.onvoiceschanged !== undefined) {
+            window.speechSynthesis.onvoiceschanged = setVoiceList;
+        }
+
+        const speech = txt => {
+            const lang = 'ko-KR';
+            const utterThis = new SpeechSynthesisUtterance(txt);
+
+            utterThis.lang = lang;
+            const kor_voice = voices.find(elem => elem.lang === lang || elem.lang === lang.replace('-', '_'));
+
+            if (kor_voice) {
+                utterThis.voice = kor_voice;
+            } else {
+                return;
+            }
+
+            window.speechSynthesis.speak(utterThis);
+        };
+
+        speech(text);
     };
 
     return (
@@ -159,11 +199,24 @@ function WordPage() {
                             </div>
                         ) : null}
                     </div>
+
+                    <button className={styles.speakBtn} onClick={() => onClickSpeak(render.word)}>
+                        <HiOutlineSpeakerWave />
+                    </button>
                     <div className={styles.chekcBtns}>
                         <button onClick={onClickNo}>
                             <div></div>I don't know
                         </button>
                     </div>
+                    {hidden ? (
+                        <button className={styles.eyeBtn} onClick={() => setHidden(false)}>
+                            <AiOutlineEyeInvisible />
+                        </button>
+                    ) : (
+                        <button className={styles.eyeBtn} onClick={() => setHidden(true)}>
+                            <AiOutlineEye />
+                        </button>
+                    )}
                     <div className={styles.footer} onClick={onClickUnknown}>
                         <RiFileWord2Fill />
                     </div>
