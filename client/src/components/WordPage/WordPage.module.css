@@ -117,6 +117,18 @@
     opacity: 0;
 }
 
+.container .content .mainBox .word .topic {
+    position: fixed;
+    width: auto;
+    height: 20px;
+    top: 72%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 15px;
+    text-align: center;
+    border-bottom: 1px solid gray;
+}
+
 .container .content .mainBox button:disabled {
     color: #bad1ff;
 }
@@ -131,33 +143,23 @@
 
 .container .content .chekcBtns button {
     position: relative;
-    width: 103px;
+    width: 180px;
     height: 38px;
     border: none;
     background: #bad1ff;
     border-radius: 10px;
+    font-size: 18px;
 }
 
 .container .content .chekcBtns button:first-child div {
     position: absolute;
-    width: 103px;
+    width: 180px;
     height: 38px;
     top: 0%;
     left: 0%;
     border: 1px solid #5665ed;
     border-radius: 10px;
-    transform: rotate(-4deg);
-}
-
-.container .content .chekcBtns button:last-child div {
-    position: absolute;
-    width: 103px;
-    height: 38px;
-    top: 0%;
-    left: 0%;
-    border: 1px solid #5665ed;
-    border-radius: 10px;
-    transform: rotate(3deg);
+    transform: rotate(-2deg);
 }
 
 .container .content .footer {
@@ -177,7 +179,7 @@
 
 .saving {
     position: absolute;
-    top: 73%;
+    top: 65%;
     left: 50%;
     width: 70%;
     height: 35px;

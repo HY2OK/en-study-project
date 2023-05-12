@@ -32,6 +32,12 @@ router.post('/getWord', (req, res) => {
         });
 });
 
+router.post('/delWord', (req, res) => {
+    Word.findOneAndDelete({userId: req.body.userId, word: req.body.word}).exec((err, result) => {
+        return res.status(200).json({success: true});
+    });
+});
+
 router.post('/uploadFiveWords', (req, res) => {
     const wordsArr = new FiveWord(req.body);
 

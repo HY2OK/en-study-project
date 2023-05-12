@@ -69,6 +69,19 @@ export const getWord = createAsyncThunk('/word', async data => {
         .catch(error => error);
 });
 
+export const delWord = createAsyncThunk('/word', async data => {
+    return axios({
+        method: 'post',
+        url: '/api/word/delWord',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        data: data,
+    })
+        .then(res => res.data)
+        .catch(error => error);
+});
+
 export const wordSlice = createSlice({
     name: 'word',
     initialState: {
@@ -129,6 +142,19 @@ export const wordSlice = createSlice({
             state.message = action.payload;
         },
         [getWord.rejected]: (state, action) => {
+            state.loading = false;
+            state.error = 'error';
+        },
+        [delWord.pending]: state => {
+            state.loading = true;
+            state.error = '';
+        },
+        [delWord.fulfilled]: (state, action) => {
+            state.loading = false;
+            state.error = '';
+            state.message = action.payload;
+        },
+        [delWord.rejected]: (state, action) => {
             state.loading = false;
             state.error = 'error';
         },

@@ -5,8 +5,8 @@ import {useDispatch, useSelector} from 'react-redux';
 import {getFiveWords, uploadWord} from '../../features/word/wordSlice';
 import {authUser} from '../../features/user/userSlice';
 import {AiOutlineClose, AiOutlineDoubleLeft, AiOutlineDoubleRight, AiOutlineCheck} from 'react-icons/ai';
-import {BsFillFileEarmarkWordFill} from 'react-icons/bs';
 import {HiMagnifyingGlass} from 'react-icons/hi2';
+import {RiFileWord2Fill} from 'react-icons/ri';
 
 import styles from './WordPage.module.css';
 import {useNavigate} from 'react-router-dom';
@@ -58,17 +58,12 @@ function WordPage() {
         setRender(change);
     };
 
-    const onClickYes = () => {
-        if (page === 4) return;
-        onClickNext();
-    };
-
     const onClickNo = () => {
         const {word, mean} = render;
         let body = {
             userId: users._id,
-            word,
-            mean,
+            word: word.trim(),
+            mean: mean.trim(),
         };
 
         dispatch(uploadWord(body)).then(res => {
@@ -138,6 +133,11 @@ function WordPage() {
                                 ) : (
                                     <div className={`${styles.mean} ${styles.hidden}`}>{render && render.mean}</div>
                                 )}
+                                {render && (
+                                    <div className={styles.topic}>
+                                        {render.subject} / {render.level}
+                                    </div>
+                                )}
                             </div>
                         )}
                         {/* 단어 렌더링 */}
@@ -161,14 +161,11 @@ function WordPage() {
                     </div>
                     <div className={styles.chekcBtns}>
                         <button onClick={onClickNo}>
-                            <div></div>No
-                        </button>
-                        <button onClick={onClickYes}>
-                            <div></div>Yes
+                            <div></div>I don't know
                         </button>
                     </div>
                     <div className={styles.footer} onClick={onClickUnknown}>
-                        <BsFillFileEarmarkWordFill />
+                        <RiFileWord2Fill />
                     </div>
                 </div>
             </div>

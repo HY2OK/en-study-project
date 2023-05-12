@@ -75,12 +75,16 @@ function WordModal({setModalOpen}) {
             const result = res.payload.message.content.split('\n');
             const array = [];
 
+            console.log(subject, level);
+
             result.forEach(e => {
                 const wordSplit = e.split('-');
 
                 const object = {
-                    word: wordSplit[0],
-                    mean: wordSplit[1],
+                    word: wordSplit[0].trim(),
+                    mean: wordSplit[1].trim(),
+                    subject: subject,
+                    level: level,
                 };
                 array.push(object);
             });
