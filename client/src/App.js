@@ -13,6 +13,10 @@ import RolePage from './components/RolePage/RolePage';
 import RolePrevPage from './components/RolePage/RolePrevPage/RolePrevPage';
 import WordPage from './components/WordPage/WordPage';
 import UnknownPage from './components/WordPage/UnknownPage/UnknownPage';
+import DiaryPage from './components/DiaryPage/DiaryPage';
+import DiaryListPage from './components/DiaryPage/DiaryListPage/DiaryListPage';
+import ResultPage from './components/DiaryPage/ResultPage/ResultPage';
+import MyPage from './components/MyPage/MyPage';
 
 function App() {
     return (
@@ -27,6 +31,10 @@ function App() {
                     <Route path="/role" element={<RolePage />} />
                     <Route path="/word" element={<WordPage />} />
                     <Route path="/word/:userId" element={<UnknownPage />} />
+                    <Route path="/diary" element={<DiaryPage />} />
+                    <Route path="/diaryList" element={<DiaryListPage />} />
+                    <Route path="/diaryList/:userId/:index" element={<ResultPage />} />
+                    <Route path="/mypage" element={<MyPage />} />
                 </Routes>
             </AnimatePresence>
         </BrowserRouter>

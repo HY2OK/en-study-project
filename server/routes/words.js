@@ -90,18 +90,18 @@ router.post('/quiz', async (req, res) => {
         }
     }
 
-    // try {
-    //     const comp = await openai.createCompletion({
-    //         model: 'davinci:ft-student-2023-05-06-16-28-13',
-    //         prompt: prompt,
-    //         max_tokens: 200,
-    //     });
-    //     if (comp.data) {
-    //         console.log('choices: ', comp.data.choices);
-    //     }
-    // } catch (err) {
-    //     console.log('err: ', err);
-    // }
+    try {
+        const comp = await openai.createCompletion({
+            model: 'davinci:ft-student-2023-05-06-16-28-13',
+            prompt: prompt,
+            max_tokens: 200,
+        });
+        if (comp.data) {
+            console.log('choices: ', comp.data.choices);
+        }
+    } catch (err) {
+        console.log('err: ', err);
+    }
 });
 
 export default router;

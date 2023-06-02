@@ -1,0 +1,200 @@
+.container {
+    font-family: 'Abhaya Libre', serif;
+    width: 390px;
+    height: 844px;
+
+    background: linear-gradient(
+        115.34deg,
+        rgba(90, 157, 236, 0.86) 4.73%,
+        rgba(100, 159, 235, 0.78) 22.35%,
+        rgba(110, 90, 236, 0.46) 69.21%,
+        rgba(237, 193, 222, 0.72) 99.96%,
+        rgba(90, 157, 236, 0) 100%
+    );
+
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .content {
+    width: 311px;
+    height: 759px;
+    background-color: #fff;
+    border-radius: 20px;
+}
+
+.container .content .header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 65px;
+    border-bottom: 1px solid #bad1ff;
+    margin: 0px 16px;
+    font-size: 25px;
+}
+
+.container .content .header svg {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    color: #bad1ff;
+    transform: translate(-50%, -50%);
+}
+
+.container .content .diary {
+    position: relative;
+    width: 297px;
+    height: 350px;
+    /* background-color: pink; */
+    margin: 5px 0px 16px 5px;
+    overflow-y: scroll;
+    /* border: 1px solid #000; */
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.container .content .diary:before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    bottom: 5px;
+    left: 0;
+    width: 35px;
+    background: radial-gradient(#575450 4px, transparent 5px) repeat-y;
+    background-size: 40px 40px;
+    border-right: 2px solid #d44147;
+    box-sizing: border-box;
+}
+
+.container .content .diary .diaryContent {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    bottom: 10px;
+    left: 35px;
+    background: linear-gradient(transparent, transparent 28px, #5a9dec 28px);
+    background-size: 30px 30px;
+}
+
+.container .content .diary .diaryContent textarea {
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    max-height: 100%;
+    line-height: 30px;
+    padding: 0 10px;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    color: #000;
+    /* font-family: 'Handlee', cursive; */
+    font-weight: bold;
+    font-size: 22px;
+    box-sizing: border-box;
+    z-index: 1;
+}
+
+.container .content .update {
+    /* background-color: pink; */
+    width: 100%;
+    /* height: 200px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container .content .update svg {
+    font-size: 35px;
+    margin-bottom: 10px;
+    color: #5a9dec;
+}
+
+.container .content .update .updateBox {
+    position: relative;
+    width: 290px;
+    height: 220px;
+    border: 3px solid #8fb1f1;
+    border-radius: 10px;
+    overflow-y: scroll;
+    word-wrap: break-word;
+    /* font-family: 'Handlee', cursive; */
+    font-size: 20px;
+    padding: 10px;
+}
+
+.container .content .update .updateBox span {
+    background: linear-gradient(to top, #ffe400 50%, transparent 50%);
+}
+
+.container .content .footer {
+    width: 100%;
+    height: 58px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .content .footer button {
+    background: #bad1ff;
+    width: 80px;
+    height: 25px;
+    border: 1px solid #5665ed;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* loding spinner */
+.ripple {
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+}
+.ripple div {
+    position: absolute;
+    border: 4px solid #8fb1f1;
+    opacity: 1;
+    border-radius: 50%;
+    animation: ripple 1.5s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+.ripple div:nth-child(2) {
+    animation-delay: -0.5s;
+}
+@keyframes ripple {
+    0% {
+        top: 36px;
+        left: 36px;
+        width: 0;
+        height: 0;
+        opacity: 0;
+    }
+    4.9% {
+        top: 36px;
+        left: 36px;
+        width: 0;
+        height: 0;
+        opacity: 0;
+    }
+    5% {
+        top: 36px;
+        left: 36px;
+        width: 0;
+        height: 0;
+        opacity: 1;
+    }
+    100% {
+        top: 0px;
+        left: 0px;
+        width: 72px;
+        height: 72px;
+        opacity: 0;
+    }
+}

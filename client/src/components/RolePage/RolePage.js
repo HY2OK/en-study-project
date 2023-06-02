@@ -23,6 +23,8 @@ function RolePage() {
 
     useEffect(() => {
         scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
+        const data = [...chat];
+        console.log(data);
     }, [chat]);
 
     const startBtn = e => {

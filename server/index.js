@@ -7,6 +7,7 @@ import bodyParser from 'body-parser';
 import userRouter from './routes/users.js';
 import roleRouter from './routes/roles.js';
 import wordRouter from './routes/words.js';
+import diaryRouter from './routes/diary.js';
 
 const app = express();
 const PORT = 5000;
@@ -20,6 +21,7 @@ app.use(cookieParser());
 app.use('/api/users', userRouter);
 app.use('/api/role', roleRouter);
 app.use('/api/word', wordRouter);
+app.use('/api/diary', diaryRouter);
 
 mongoose.set('strictQuery', false);
 
